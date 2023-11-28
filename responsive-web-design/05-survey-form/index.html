@@ -1,46 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" lang="en">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" type="module"></script>
+</head>
+
+<body>
     <h1 id="title">Welcome to our survey</h1>
     <p id="description">Please fill out all the fields</p>
+
     <form id="survey-form">
 
-      <!-- Name Email Number inputs -->
-      <label id="name-label">Name: </label>
-      <input id="name" type="text" required placeholder="name"/>
-      <label id="email-label">Email: </label>
-      <input id="email" type="email" required placeholder="email"/>
-      <label id="number-label">Number: </label>
-      <input id="number" type="number" min=0 max=100 required placeholder="number"/>
+        <!-- Name Email Number inputs -->
+        <fieldset>
+            <legend>Please fill your Name,Email and Preffered Number</legend>
+            <label id="name-label">Name: </label>
+            <input id="name" type="text"  placeholder="name" />
+            <label id="email-label">Email: </label>
+            <input id="email" type="text"  placeholder="email" />
+            <label id="number-label">Number: </label>
+            <input id="number" type="text" min=0 max=100  placeholder="number" />
+        </fieldset>
 
-      <!-- Dropdown -->
-      <select id="dropdown">
-         <option>option1</option>
-         <option>option2</option>
-         <option>option3</option>
-      </select>
+        <!-- Dropdown -->
+        <fieldset>
+            <legend>Please choose an option</legend>
+            <select id="dropdown" name="option">
+                <option  value="1">option1</option>
+                <option  value="2">option2</option>
+                <option  value="3">option3</option>
+            </select>
+        </fieldset>
 
-      <!-- Radio Group 1 -->
-      <input type=radio name="radioGrup1" value="first" checked/>
-      <input type=radio name="radioGrup1" value="second"/>
-      <input type=radio name="radioGrup1" value="third"/>
-      
-      <!-- Checkboxes -->
-      <input type="checkbox" value="1">
-      <input type="checkbox" value="2">
-      <input type="checkbox" value="3">
-      <input type="checkbox" value="4">
+        <!-- Radio Group 1 -->
+        <fieldset>
+            <legend>Please choose your favorite</legend>
+            <label>first:  </label><input type=radio name="radioGrup1" value="first" checked />
+            <label>second: </label><input type=radio name="radioGrup1" value="second" />
+            <label>third:  </label><input type=radio name="radioGrup1" value="third" />
+        </fieldset>
 
-      <!-- Textarea for comments -->
-      <textarea ></textarea>
+        <!-- Checkboxes -->
+        <fieldset>
+            <legend>Please check by your choice</legend>
+            <input type="checkbox" name="checkMe1">
+            <input type="checkbox" name="checkMe2">
+            <input type="checkbox" name="checkMe3">
+            <input type="checkbox" name="checkMe4">
+        </fieldset>
 
-      <!-- Submit button(input) -->
-      <input id ="submit" type="submit" value="Submit Survey"/>
+        <!-- Textarea for comments -->
+        <textarea placeholder="add your comments here...."></textarea>
+
+        <!-- Submit button(input) -->
+        <input id="submit" type="submit" value="Submit Survey" />
 
     </form>
-  </body>
+</body>
+
 </html>
