@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Doc</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>C# Docs</header>
+        <a class="nav-link" href="#.NET_architecture">.NET architecture</a>
+        <a class="nav-link" href="#Hello_world">Hello world</a>
+        <a class="nav-link" href="#Types_and_variables">Types and variables</a>
+        <a class="nav-link" href="#Program_structure">Program structure</a>
+        <a class="nav-link" href="#C#_types_and_members">C# types and members</a>
+        <a class="nav-link" href="#Classes_and_objects">Classes and objects</a>
+        <a class="nav-link" href="#Type_parameters">Type parameters</a>
+    </nav>
+    <main id="main-doc">
+
+        <section class="main-section" id=".NET_architecture">
+            <header>.NET architecture</header>
+            <p>C# programs run on .NET, a virtual execution system called the common language runtime (CLR) and a set of
+                class libraries. The CLR is the implementation by Microsoft of the common language infrastructure (CLI),
+                an international standard. The CLI is the basis for creating execution and development environments in
+                which languages and libraries work together seamlessly.</p>
+            <a href="https://learn.microsoft.com/" target="_blank"> <span>Learn more at</span> https://learn.microsoft.com/</a>
+        </section>
+
+        <section class="main-section" id="Hello_world">
+            <header>Hello world</header>
+            <p>The "Hello, World" program is traditionally used to introduce a programming language. Here it is in C#:</p>
+            <code>
+                 using System; <br/>    
+     
+                 class Hello <br/>
+                 {   <br/>         
+                     static void Main() <br/>
+                     { <br/>
+                        // This line prints "Hello, World" <br/>
+                         Console.WriteLine("Hello, World");<br/>
+                     }<br/>
+                 }<br/>
+            </code>
+        <p>The "Hello, World" program starts with a using directive that references the System namespace. Namespaces provide a hierarchical means of organizing C# programs and libraries. Namespaces contain types and other namespaces—for example, the System namespace contains a number of types, such as the Console class referenced in the program, and many other namespaces, such as IO and Collections. A using directive that references a given namespace enables unqualified use of the types that are members of that namespace. Because of the using directive, the program can use Console.WriteLine as shorthand for System.Console.WriteLine.</p>
+        <a href="https://learn.microsoft.com/" target="_blank"><span>Learn more at</span> https://learn.microsoft.com/</a>
+        </section>
+
+        <section class="main-section" id="Types_and_variables">
+            <header>Types and variables</header>
+            <p>A type defines the structure and behavior of any data in C#. The declaration of a type may include its members, base type, interfaces it implements, and operations permitted for that type. A variable is a label that refers to an instance of a specific type.</p>
+            
+            <ul>
+                <li>Value types
+                    <ul>
+                        <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types#built-in-value-types" target="_blank">Simple types</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/enum" target="_blank">Enum types</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct" target="_blank">Struct types</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types" target="_blank">Nullable value types</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples" target="_blank">Tuple value types</a></li>
+                    </ul>
+                </li>
+                <li>Reference types
+                    <ul>
+                        <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/class" target="_blank">Class types</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interface" target="_blank">Interface types</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/arrays" target="_blank">Array types</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types#the-delegate-type" target="_blank">Delegate types</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="https://learn.microsoft.com/" target="_blank"><span>Learn more at</span> https://learn.microsoft.com/</a>
+        </section>
+
+        <section class="main-section" id="Program_structure">
+            <header>Program structure</header>
+            <p>The key organizational concepts in C# are programs, namespaces, types, members, and assemblies. Programs declare types, which contain members and can be organized into namespaces. Classes, structs, and interfaces are examples of types. Fields, methods, properties, and events are examples of members. When C# programs are compiled, they're physically packaged into assemblies. Assemblies typically have the file extension .exe or .dll, depending on whether they implement applications or libraries, respectively.</p>
+            <p>As a small example, consider the below C# code:</p>
+            <code>
+                namespace Acme.Collections; <br>
+            </code> 
+            <code>
+                    public class Stack&lt;T&gt; <br>
+                    {
+                    Entry _top; <br>
+                    <br>
+                    public void Push(T data) <br>
+                    {  <br>
+                    _top = new Entry(_top, data); <br>
+                    }} <br> <span>.....full code and article at</span>  <a href="https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/#program-structure" target="_blank">https://learn.microsoft.com</a>
+            </code>
+            
+            <a href="https://learn.microsoft.com/" target="_blank"><span>Learn more at</span> https://learn.microsoft.com/</a>
+        </section>
+
+        <section class="main-section" id="C#_types_and_members">
+            <header>C# types and members</header>
+            <p>As an object-oriented language, C# supports the concepts of encapsulation, inheritance, and polymorphism. A class may inherit directly from one parent class, and it may implement any number of interfaces. Methods that override virtual methods in a parent class require the override keyword as a way to avoid accidental redefinition. In C#, a struct is like a lightweight class; it's a stack-allocated type that can implement interfaces but doesn't support inheritance. C# provides record class and record struct types, which are types whose purpose is primarily storing data values.</p>
+            <p>All types are initialized through a constructor, a method responsible for initializing an instance. Two constructor declarations have unique behavior:</p>
+            <p> &#8227;  A parameterless constructor, which initializes all fields to their default value.</p>
+            <p> &#8227;  A primary constructor, which declares the required parameters for an instance of that type.</p>
+            <a href="https://learn.microsoft.com/" target="_blank"><span>Learn more at</span> https://learn.microsoft.com/</a>
+        </section>
+
+        <section class="main-section" id="Classes_and_objects">
+            <header>Classes and objects</header>
+            <p>Classes are the most fundamental of C#'s types. A class is a data structure that combines state (fields) and actions (methods and other function members) in a single unit. A class provides a definition for instances of the class, also known as objects. Classes support inheritance and polymorphism, mechanisms whereby derived classes can extend and specialize base classes</p>
+            <p>New classes are created using class declarations. A class declaration starts with a header. The header specifies:</p>
+            <ul>
+                <li>The attributes and modifiers of the class</li>
+                <li>The name of the class</li>
+                <li>The base class (when inheriting from a base class)</li>
+                <li>The interfaces implemented by the class.</li>
+            </ul>
+            <p>he header is followed by the class body, which consists of a list of member declarations written between the delimiters { and }.</p>
+            <p>The following code shows a declaration of a simple class named Point:</p>
+            <code>
+                public class Point <br>
+                { <br>
+                public int X { get; } <br>
+                public int Y { get; } <br>
+    
+                public Point(int x, int y) => (X, Y) = (x, y); <br>
+                } <br>
+            </code>
+            <p>nstances of classes are created using the new operator, which allocates memory for a new instance, invokes a constructor to initialize the instance, and returns a reference to the instance. The following statements create two Point objects and store references to those objects in two variables:</p>
+            <a href="https://learn.microsoft.com/" target="_blank"><span>full text and code at:</span> https://learn.microsoft.com/</a>
+        </section>
+
+        <section class="main-section" id="Type_parameters">
+            <header>Type parameters</header>
+            <p>Generic classes define type parameters. Type parameters are a list of type parameter names enclosed in angle brackets. Type parameters follow the class name. The type parameters can then be used in the body of the class declarations to define the members of the class. In the following example, the type parameters of Pair are TFirst and TSecond:</p>
+            <code>
+                public class Pair&lt; TFirst, &lt; TSecond &gt; &lt;br&gt;
+                { <br>
+                public TFirst First { get; } <br>
+                public TSecond Second { get; } <br>
+                
+                public Pair(TFirst first, TSecond second) => <br>
+                    (First, Second) = (first, second); <br>
+                } <br>
+            </code>
+            <a href="https://learn.microsoft.com/" target="_blank"><span>full text and code at: more at</span> https://learn.microsoft.com/</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <h2>All texts and code are downloaded from:</h2>
+        <a href="https://learn.microsoft.com">https://learn.microsoft.com</a>
+        <a href="https://www.freecodecamp.org">https://www.freecodecamp.org</a>
+    </footer> 
+    
+</body>
+
+</html>
