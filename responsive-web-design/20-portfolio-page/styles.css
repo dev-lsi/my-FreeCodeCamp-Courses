@@ -1,0 +1,26 @@
+header {
+    position: fixed;
+    top:0;
+    height:100px;
+    left:0;
+    right:0;
+    border-bottom: 1px solid grey;
+    background-color: aqua;
+}
+
+main {
+    padding-top: 200px;
+    height: 100vh;
+}
+
+#welcome-section {
+   
+    height: 500px;
+    background-color: darkgrey;
+}
+
+@media (max-width:600px){
+   body{
+    background-color: red;
+   }
+}
